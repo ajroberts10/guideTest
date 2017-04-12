@@ -1,0 +1,35 @@
+.guides-logo {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+
+    &__container {
+        padding: 0 $gel-spacing-unit * 2;
+        margin: 0 auto;
+        width: 94%;
+
+        @include mq($from: gel-bp-l) {
+            width: 85%;
+        }
+
+        @include mq($from: gel-bp-xl) {
+            width: 65%;
+        }
+    }
+
+    &__link {
+        text-indent: -10000px;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: 0 $gel-spacing-unit * 2;
+        display: block;
+        min-height: 63px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font: inherit;
+    }
+}

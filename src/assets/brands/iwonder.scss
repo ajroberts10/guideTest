@@ -1,0 +1,24 @@
+@import '../lib/style';
+
+$brand: (
+    background-image: url('../img/house.jpg'),
+    colors: (
+        #005361,
+        #076973,
+        #138c8f,
+        #17999a,
+        #0ca1a2,
+        #1fb1ad,
+        #27c8c0,
+        #2edfd2,
+    ),
+    logo-image: url('../img/academy-logo.svg'),
+    logo-size: 181px 48px,
+    logo-width: 181px
+
+);
+
+body {
+    @include brand-styling($brand);
+}
+

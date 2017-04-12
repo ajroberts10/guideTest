@@ -1,0 +1,126 @@
+.guides-navigation {
+    @include gel-layout-item;
+    display: block;
+    left: 0; 
+    margin: auto;
+    padding: 0;
+    padding-left: 0 !important;
+    position: absolute;
+    right: 0;
+    top: $gel-spacing-unit * 9;
+    width: 95%;
+    z-index: 20000;
+
+    @include mq($from: gel-bp-l) {
+        width: 85%;
+    }
+
+    @include mq($from: gel-bp-xl) {
+        width: 65%;
+    }
+
+
+    &__title {
+        margin: 0 auto;
+        padding: 0 $gel-spacing-unit * 2;
+
+        > h1 {
+            @include gel-typography('trafalgar');
+            color: white;
+            margin-bottom: 0;
+            padding: $gel-spacing-unit $gel-spacing-unit*8 $gel-spacing-unit*2 0;
+
+            @include mq($from: gel-bp-m) {
+                @include gel-typography('canon');
+            }
+            
+        }
+    }
+
+    &__steps {
+        &-list {
+            box-sizing: border-box;
+            background: #fff;
+            border-collapse: collapse;
+            display: none;
+            height: $gel-spacing-unit * 9;
+            list-style: none;
+            margin: 0 auto;
+            overflow: visible;
+            padding: 0;
+            position: relative;
+            right: 0;
+            table-layout: fixed;
+            z-index: 100;
+            width: 100%;
+
+            @include mq($from: gel-bp-l) {
+                display: table;
+            }
+
+            &-item {           
+                box-sizing: border-box;
+                display: table-cell;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        &-link {
+            @include gel-typography('long-primer-bold');
+            border-bottom: solid $gel-spacing-unit;
+            box-sizing: border-box;
+            background: #fff;
+            color: #333;
+            display: block;
+            height: $gel-spacing-unit * 10;
+            line-height: 1;
+            padding: $gel-spacing-unit;
+            position: relative;
+            text-decoration: none;
+            width: auto;
+
+            &:after {
+                background: #f1f1ee;
+                border-right: 1px solid transparent;
+                content: "";
+                display: block;
+                height: $gel-spacing-unit * 9;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 0;
+            }          
+        }
+    }
+}
+
+
+#sticky-anchor {
+    display: block;
+    position: absolute;
+    top: 120px;
+}
+
+#sticky.stick {
+    
+    margin-top: 0 !important;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    width: 100%;
+
+    @include mq($from: gel-bp-l) {
+        width: 85%;
+    }
+
+    @include mq($from: gel-bp-xl) {
+        width: 65%;
+    }
+
+
+    h1 {
+        @include gel-typography('pica');
+        margin-top: 0;
+    }
+}

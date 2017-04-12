@@ -1,0 +1,52 @@
+@import 'foundations';
+@import 'base';
+@import 'logo';
+@import 'step';
+@import 'navigation';
+@import 'hero';
+
+@mixin brand-styling ($brand) {
+    .guides-hero {
+        background-image: map-get($brand, background-image);
+    }
+    
+    @each $current-color in map-get($brand, colors) {
+        $i: index(map-get($brand, colors), $current-color);
+        .guides-navigation {
+
+            &__title {
+                background: nth(map-get($brand, colors), 1);
+            }
+
+            &__step {
+                &--#{$i} {
+                    border-color: $current-color;
+
+                    &:hover {
+                        background-color: $current-color;
+                    }
+
+                    &:active {
+                        border-color: #333 !important;
+                        background-color: $current-color;
+                    }
+                                       
+                }
+            }
+        }
+        
+        .penultimate-#{$i} {
+            background-color: $current-color;
+
+            .guides-step__container {
+                background-color: #fff;
+                padding: $gel-spacing-unit * 2 $gel-spacing-unit * 2;            }
+            }
+    }
+
+    .guides-logo__link {
+        background-image: map-get($brand, logo-image);
+        background-size: map-get($brand, logo-size);
+        width: map-get($brand, logo-width);
+    }
+}

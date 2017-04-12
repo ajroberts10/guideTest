@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ title }}</title>
+
+    <!-- Bootstrap Core CSS -->
+
+
+    <!-- Theme CSS -->
+    <link href="css/{{ brand }}.css" rel="stylesheet">
+
+
+</head>
+
+<body class="{{ brand }}">
+
+    <div class="guides-logo">
+        <div class="guides-logo__container">
+            <a class="guides-logo__link"></a>
+        </div>
+    </div>
+
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <div id="sticky-anchor"></div>
+    <header id="sticky" class="guides-navigation">
+        
+        <div class="guides-navigation__title">
+            <h1>Take the test: Where in Britain would you be happiest?</h1>
+        </div>
+        <div class="guides-navigation__steps">
+            <ol class="guides-navigation__steps-list">
+                {% for step in steps %}
+                    <li class="guides-navigation__steps-list-item"><a href="#step{{ loop.index }}" class="guides-navigation__steps-link guides-navigation__step--{{ loop.index }}">{{ step.title }}</a></li>
+                {% endfor %}
+            </ol>
+        </div>
+        
+
+    </header>
+    
+
+
+    <!-- Main Content -->
+    <section class="guides-hero">
+
+    </section>
+    {% set arrayLength = steps.length %}
+    {% set cls = cycler("guides-step--odd", "guides-step--even") %}
+    {% for step in steps %}
+        <section class="guides-step guides-step--{{ loop.index }} {{  "penultimate-" if step.penultimate else "" }}{{ loop.index }} {{ cls.next() }}">
+            <span id="step{{ loop.index }}" class="guides-step__anchor"></span>
+            <div class="guides-step__container">
+                <div class="guides-step__number">
+                    {{ loop.index }}
+                </div>
+                <div class="guides-step__heading">
+                    {{ step.title }}
+                </div>
+                <div class="guides-step__content">
+                    <p>
+                        Take the simple personality test below – and find out how your personality and the place where you live affect your happiness.
+                    </p>
+                    <p>
+                        Until now, we've decided on where we should live based on things like job, family, friends, schools, colleges, countryside and nightlife. But now new research suggests different districts of Britain have distinct personality traits. And how well our personality fits with the people around us can contribute to our happiness.
+                    </p>
+                    <p>
+                        The test below will reveal your personality traits and based on the research, it will predict the place in Britain that would make you happiest, or least happy, based solely on your personality profile.
+                    </p>
+
+                </div>
+            </div>
+
+        </section>
+    {% endfor %}
+
+
+    <!-- Footer -->
+
+
+    <!-- jQuery -->
+
+</body>
+
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+    $(function() {
+    $(window).scroll(sticky_relocate);
+    sticky_relocate();
+});
+function sticky_relocate() {
+    var window_top = $(window).scrollTop();
+    var div_top = $('#sticky-anchor').offset().top;
+    if (window_top > div_top) {
+        $('#sticky').addClass('stick');
+        $('#sticky-anchor').height($('#sticky').outerHeight());
+    } else {
+        $('#sticky').removeClass('stick');
+        $('#sticky-anchor').height(0);
+    }
+}
+</script>

@@ -1,0 +1,23 @@
+@import '../lib/style';
+
+$brand: (
+    background-image: url('../img/brain.jpg'),
+    colors: (
+        #FEB700,
+        #C8BD1A,
+        #9ABC73,
+        #4FBBC2,
+        #53A0BE,
+        #5A6FB6,
+        #6049B1,
+        #6A03A6
+    ),
+    logo-image: url('../img/news-logo.svg'),
+    logo-size: 161px 28px,
+    logo-width: 161px
+);
+
+body {
+    @include brand-styling($brand);
+}
+

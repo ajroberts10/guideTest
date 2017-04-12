@@ -1,0 +1,32 @@
+{
+  "name": "guidetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajroberts10/guideTest.git"
+  },
+  "author": "Adam Roberts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajroberts10/guideTest/issues"
+  },
+  "homepage": "https://github.com/ajroberts10/guideTest#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "gel-grid": "^3.0.4",
+    "gel-sass-tools": "^1.2.1",
+    "gel-typography": "^2.0.5",
+    "gulp": "^3.9.1",
+    "nunjucks": "^3.0.0",
+    "sass-mq": "^3.3.2"
+  },
+  "devDependencies": {
+    "gulp-sass": "^3.1.0"
+  }
+}
